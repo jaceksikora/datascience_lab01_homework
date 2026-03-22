@@ -1,0 +1,17 @@
+[project]
+name = "datascience-lab01-homework"
+version = "0.1.0"
+description = "Add your description here"
+requires-python = ">=3.11"
+dependencies = [
+    "clean-text>=0.7.1",
+    "joblib>=1.5.3",
+    "torch>=2.10.0",
+    "torchvision>=0.25.0",
+    "transformers>=5.3.0",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.2",
+]
