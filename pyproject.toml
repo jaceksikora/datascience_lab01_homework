@@ -5,8 +5,10 @@ description = "Add your description here"
 requires-python = ">=3.11"
 dependencies = [
     "clean-text>=0.7.1",
+    "fastapi>=0.135.1",
     "joblib>=1.5.3",
     "pre-commit>=4.5.1",
+    "pydantic>=2.12.5",
     "torch>=2.10.0",
     "torchvision>=0.25.0",
     "transformers>=5.3.0",
@@ -16,3 +18,7 @@ dependencies = [
 dev = [
     "pytest>=9.0.2",
 ]
+
+[tool.mypy]
+explicit_package_bases = true
+check_untyped_defs = true
