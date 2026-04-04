@@ -1,4 +1,4 @@
-import joblib
+import cloudpickle
 from sentence_transformers import SentenceTransformer
 from sklearn.linear_model import LogisticRegression
 
@@ -22,4 +22,5 @@ def train_model():
     clf.fit(X, labels)
 
     model.save("models/embedding_model")
-    joblib.dump(clf, "models/sentiment_model.joblib")
+    with open("models/sentiment_model.pkl", "wb") as f:
+        cloudpickle.dump(clf, f)

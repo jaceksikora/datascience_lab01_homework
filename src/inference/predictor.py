@@ -1,9 +1,9 @@
 import os
-import joblib
+import cloudpickle
 from sentence_transformers import SentenceTransformer
 from src.training.train import train_model
 
-MODEL_PATH = "models/sentiment_model.joblib"
+MODEL_PATH = "models/sentiment_model.pkl"
 EMBEDDING_MODEL_PATH = "models/embedding_model"
 
 label_map = {0: "negative", 1: "neutral", 2: "positive"}
@@ -17,7 +17,8 @@ class SentimentService:
             train_model()
             print("Training completed.")
 
-        self.classifier = joblib.load(model_path)
+        with open(model_path, "rb") as f:
+            self.classifier = cloudpickle.load(f)
         self.encoder = SentenceTransformer(EMBEDDING_MODEL_PATH)
 
     def predict(self, text: str) -> str:
