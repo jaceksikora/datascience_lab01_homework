@@ -7,7 +7,7 @@ from sklearn.model_selection import train_test_split
 
 def train_model():
     texts = [
-        "What a great MLOps lecture, I am very satisfied",
+        "What a great MLOps lecture",
         "This is terrible",
         "It's okay, nothing special",
         "Amazing experience",
