@@ -18,6 +18,7 @@ RUN uv sync --no-dev
 COPY app/ ./app/
 COPY src/ ./src/
 
+ENV PATH="/app/.venv/bin:$PATH"
 ENV PYTHONPATH=/app
 
 EXPOSE 8000
