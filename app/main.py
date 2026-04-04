@@ -1,8 +1,8 @@
 from fastapi import FastAPI
 
-from inference import SentimentService
-from model.PredictionRequest import PredictionRequest
-from model.PredictionResponse import PredictionResponse
+from src.inference.predictor import SentimentService
+from app.models.PredictionRequest import PredictionRequest
+from app.models.PredictionResponse import PredictionResponse
 
 app = FastAPI()
 service = SentimentService()
