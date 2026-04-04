@@ -48,3 +48,9 @@ def test_predict_neutral(text, expected):
     assert response.status_code == 200
     data = response.json()
     assert data["prediction"] == expected
+
+
+def test_empty_string():
+    response = client.post("/predict", json={"text": ""})
+
+    assert response.status_code == 422
